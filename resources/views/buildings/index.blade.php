@@ -1,16 +1,15 @@
-@extends('layouts.app')
-
+@extends('admin')
 @section('content')
   
 <div class="card card-default">
 <div class="card-header">
-     Rooms
+     Buildings
 </div>
      <div class="card-body">
         <table class="table table-hover">
              <thead>
                  <th>
-                     Room Number
+                     Building name
                  </th>
                  <th>
                      Editing
@@ -21,24 +20,24 @@
              </thead>
 
              <tbody>
-             @if($rooms->count()>0)
-                @foreach($rooms as $room)
+             @if($buildings->count()>0)
+                @foreach($buildings as $building)
                      <tr>
                          <td>
-                             {{$room->room_no}}
+                             {{$building->name}}
                          </td>
                          <td>
-                         <a href="{{route('rooms.edit',[$room->id])}}" class="btn btn-xs btn-info">
+                         <a href="{{route('buildings.edit',[$building->id])}}" class="btn btn-xs btn-info">
                                 Edit
                              </a>
                          </td>
                          <td>
                        
-                             <a href="{{route('rooms.delete',[$room->id])}}" class="btn btn-xs btn-danger">
+                             <a href="{{route('buildings.delete',[$building->id])}}" class="btn btn-xs btn-danger">
                                 Delete
-                                <form action="/rooms/{{$room->id}}" method="POST">
-                             @csrf
-                              @method('DELETE')
+                                <form action="/buildings/{{$building->id}}" method="GET">
+                               @csrf
+                              
                               </form>
                              </a>
                              
@@ -49,7 +48,7 @@
                 @else
                        <tr>
                          <th colspan="5" class="text-center">
-                             No rooms yet.
+                             No buildings yet.
                          </th>
                       </tr>
 
@@ -58,4 +57,4 @@
         </table>
      </div>
    </div>
-   @endsection
+@endsection

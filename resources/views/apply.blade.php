@@ -130,9 +130,9 @@
       >
         <div class="container">
           <div class="st-page-heading-in text-center">
-            <h1 class="st-page-heading-title">Apply For Room Here</h1>
+            <h1 class="st-page-heading-title">Send Your Opinion To Us</h1>
             <div class="st-page-heading-subtitle">
-              Our dedicated team is available 24/7.
+              We would like to welcome it.
             </div>
           </div>
         </div>

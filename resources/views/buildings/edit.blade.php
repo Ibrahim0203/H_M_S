@@ -4,24 +4,24 @@
       
    <div class="card card-default">
     <div class="card-header">
-      Update category
+      Update Building
     </div>
      <div class="card-body">
-      <form action="{{route('categories.update',
-      ['id'=>$category->id])}}" method="POST">
+      <form action="{{route('buildings.update',
+      ['id'=>$building->id])}}" method="POST">
       @csrf           
        <div class="text-center">
         <div class="form-group">
          <label for="category">Name</label>
           <input class="form-control" type="text" 
-          id="name" name="name" value="{{$category->name}}">
+          id="name" name="name" value="{{$building->name}}">
         </div>
        </div>
 
            <div class="form-group-item">
             <div class="text-center">
              <button class="btn btn-success" type="submit">
-                 Update Category
+                 Update Building
              </button>           
             </div>
            </div>

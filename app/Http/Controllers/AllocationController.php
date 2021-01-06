@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Building;
+use App\Models\Floor;
+use App\Models\Allocation;
+use Session;
 
 class AllocationController extends Controller
 {
     public function index()
     {
-        return view('admin.posts.index')->with('posts',Post::all());
+        $allocations = Allocation::get();
+        $buildings = Building::get();
+        $floors = Floor::get();
+        return view('allocations.index'
+        ,compact('allocations','buildings','floors'));
     }
 
     /**
@@ -18,13 +26,16 @@ class AllocationController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $buildings = Building::all();
+        
+        $floors = Floor::all();
 
-        if($categories->count()==0 || $tags->count()==0){
-            Session::flash('info','You must have some categories and tags before attempting to create a post');
+        if($buildings->count()==0 || $floors->count()==0){
+            Session::flash('info','You must have some buildings and floors before attempting to create a allocation');
             return redirect()->back();
         }
-        return view('admin.posts.create')->with('categories', $categories);
+        return view('allocations.create',
+        compact('buildings','floors'));
     }
 
     /**
@@ -38,18 +49,27 @@ class AllocationController extends Controller
         
         $this->validate($request, [
               
-            'title'=>'required',
-            'category_id'=>'required',
-
+            'student_name'=>'required',
+            'student_id'=>'required',
+            'program'=>'required',
+            'semester'=>'required',
+            'room_no'=>'required',
+            'building_id'=>'required',
+            'floor_id'=>'required'
         ]);
 
-        $post= Post::create([
-          'title'=>$request->title,
-          'category_id'=>$request->category_id,
-          'slug'=>$request->title,
+        $allocation= Allocation::create([
+          'student_name'=>$request->student_name,
+          'student_id'=>$request->student_id,
+          'program'=>$request->program,
+          'semester'=>$request->semester,
+          'room_no'=>$request->room_no,
+          'building_id'=>$request->building_id,
+          'floor_id'=>$request->floor_id,
+          'slug'=>$request->student_name
         ]);
 
-        Session::flash('success','Post created successfully.');
+        Session::flash('success','Allocation created successfully.');
         
         return redirect()->back();
     }
@@ -60,9 +80,9 @@ class AllocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Allocation $allocation)
     {
-        return view("admin.posts.show", compact("post"));
+        return view("allocations.show",compact('allocation'));
     }
 
     /**
@@ -73,9 +93,11 @@ class AllocationController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $allocation = Allocation::find($id);
+        $buildings = Building::get();
+        $floors = Floor::get();
 
-        return view('admin.posts.edit')->with('post',$post)->with('categories',Category::all());
+        return view('allocations.edit',compact('allocation','buildings','floors'));
     }
 
     /**
@@ -88,21 +110,30 @@ class AllocationController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-
-            'title' => 'required',
-            'category_id' => 'required'
+              
+            'student_name'=>'required',
+            'student_id'=>'required',
+            'program'=>'required',
+            'semester'=>'required',
+            'room_no'=>'required',
+            'building_id'=>'required',
+            'floor_id'=>'required'
         ]);
 
-          $post = Post::find($id);
+          $allocation = Allocation::find($id);
 
-          $post->title = $request->title;
-          $post->category_id = $request->category_id;
+          $allocation->student_name = $request->student_name;
+          $allocation->student_id = $request->student_id;
+          $allocation->program = $request->program;
+          $allocation->semester = $request->semester;
+          $allocation->room_no = $request->room_no;
+          $allocation->building_id = $request->building_id;
+          $allocation->floor_id = $request->floor_id;
+          $allocation->slug = $request->student_name;
 
-          $post->save();
-
-          Session::flash('success','Post updated successfully.');
-
-          return redirect()->route('posts');
+          $allocation->update();
+          Session::flash('success','Allocation updated successfully.');
+          return redirect()->route('allocations.create');
     }
 
     /**
@@ -113,13 +144,41 @@ class AllocationController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
+        $allocation = Allocation::find($id);
+        $allocation->delete();
 
-        Session::flash('success','Your post was just trashed.');
+        Session::flash('success','The room became vacant.');
 
         return redirect()->back();
     }
 
+    public function vacantindex()
+    {
+        $allocations = Allocation::onlyTrashed()->get();
+        
+        return view('allocations.vacant',compact('allocations'));
+    }
+
+    public function kill($id)
+    {
+        $allocation = Allocation::withTrashed()->where('id',$id)->first();
+
+        $allocation->forceDelete();
+        
+         Session::flash('success','Allocation deleted permanently.');
+
+        return redirect()->back();
+    }
+
+    public function allocate($id)
+    {
+        $allocation = Allocation::withTrashed()->where('id',$id)->first();
+
+        $allocation->restore();
+        
+         Session::flash('success','Allocation created successfully.');
+
+        return redirect()->route('allocations.index');
+    }
 
 }

@@ -78,7 +78,7 @@
                     </a>
                     
                   </li>
-                  <li><a href="{{route('home')}}">Blogs</a></li>
+                  <li><a href="{{route('blog')}}">Blogs</a></li>
                   <li><a href="{{route('home')}}">Notice</a></li>
                   <li><a href="{{route('apply')}}">Apply for Room</a></li>
                   <li><a href="{{route('home')}}">Payment</a></li>
@@ -120,6 +120,34 @@
             <ul class="nav nav-treeview">
               @if(Auth::check())
 
+              <li class="nav-item">
+                 <a href="{{route('askrooms.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>AskRoom Applicants</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('leaverooms.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>LeaveRoom Applications</p>
+                 </a>
+               </li>
+              
+              <li class="nav-item">
+                 <a href="{{route('buildings.create')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Create Building</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('buildings.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Buildings</p>
+                 </a>
+               </li>
+
                <li class="nav-item">
                  <a href="{{route('categories.create')}}" class="nav-link active">
                    <i class="far fa-circle nav-icon"></i>
@@ -131,6 +159,48 @@
                  <a href="{{route('categories.index')}}" class="nav-link active">
                    <i class="far fa-circle nav-icon"></i>
                    <p>Categories</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('floors.create')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Create Floor</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('floors.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Floors</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('allocations.create')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Create New Allocation</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('allocations.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Allocated Rooms</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('allocations.vacantindex')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Vacant Rooms</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('posts.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Blogs</p>
                  </a>
                </li>
 

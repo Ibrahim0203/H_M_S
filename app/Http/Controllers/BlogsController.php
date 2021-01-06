@@ -79,16 +79,11 @@ class BlogsController extends Controller
     }
 
     public function singlePost($slug){
-        $post = Post::where('slug',$slug)->first();
-
-        $next_id = Post::where('id','>',$post->id)->min('id');
-        $prev_id = Post::where('id','<',$post->id)->max('id');
+        $post = Blog::where('slug',$slug)->first();
 
         return view('news-details')
         ->with('post',$post)
-        ->with('categories',Category::all())
-        ->with('next',Post::find($next_id))
-        ->with('prev',Post::find($prev_id));
+        ->with('categories',Category::all());
 
     }
 

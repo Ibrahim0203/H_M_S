@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Building extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'room_no'
+        'name'
        ];
 
-       public function allocation()
-       {
-           return $this->belongsTo('App\Models\Allocation');
-       }
-   
+    public function allocations()
+    {
+        return $this->hasMany('App\Models\Allocation');
+    }
 }

@@ -4,20 +4,11 @@
   
 <div class="card card-default">
 <div class="card-header">
-     Published Allocation
+     AskRoom Applicants
 </div>
      <div class="card-body">
         <table class="table table-hover">
              <thead>
-                 <th>
-                     Room 
-                 </th>
-                 <th>
-                     Building
-                 </th>
-                 <th>
-                     Floor
-                 </th>
                  <th>
                      Student's Name
                  </th>
@@ -25,48 +16,53 @@
                      Student's Id
                  </th>
                  <th>
-                     Edit
+                     Program
                  </th>
                  <th>
-                     Vacant
+                     Semester
+                 </th>
+                 <th>
+                     Section
+                 </th>
+                 <th>
+                     Email
+                 </th>
+                 <th>
+                     Delete
                  </th>
              </thead>
 
              <tbody>
-               @if($allocations->count()>0)
-               @foreach($allocations as $allocation)
+               @if($askrooms->count()>0)
+               @foreach($askrooms as $askroom)
                    <tr>
                       <td>
-                         {{$allocation->room_no}}
-                      </td>
-                      
-                      <td>
-                         {{$allocation->building->name}}
-                      </td>
-                      
-                      <td>
-                      
-                         {{$allocation->floor->floor}}
-                      </td>
-                      
-                      <td>
-                         {{$allocation->student_name}}
+                      {{$askroom->name}}
                       </td>
                       <td>
-                         {{$allocation->student_id}}
+                      {{$askroom->student_id}}
                       </td>
                       <td>
-                         <a href="{{route('allocations.edit',[$allocation->id])}}" class="btn btn-xs btn-info">Edit</a>
+                      {{$askroom->program}}
                       </td>
                       <td>
-                         <a href="{{route('allocations.vacant',[$allocation->id])}}" class="btn btn-xs btn-danger">Vacant</a>
+                      {{$askroom->semester}}
+                      </td>
+                      <td>
+                      {{$askroom->section}}
+                      </td>
+                      <td>
+                      {{$askroom->email}}
+                      </td>
+                      <td>
+                         <a href="{{route('askrooms.delete',[$askroom->id])}}" class="btn btn-xs btn-danger">Delete</a>
                       </td>
                    </tr>
                  @endforeach
                  @else
                  <tr>
                          <th colspan="5" class="text-center">
-                             No Allocations Yet.
+                             No Applicants.
                          </th>
                       </tr>
 

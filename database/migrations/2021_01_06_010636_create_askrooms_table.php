@@ -4,20 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAllocationsTable extends Migration
+class CreateAskroomsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *'name','student_id','program','semester','section','email','slug'
      * @return void
      */
     public function up()
     {
-        Schema::create('allocations', function (Blueprint $table) {
+        Schema::create('askrooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug');;
-            $table->integer('room_no_id');
+            $table->string('student_id');
+            $table->string('program');
+            $table->string('semester');
+            $table->string('section');
+            $table->string('email');
+            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateAllocationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('allocations');
+        Schema::dropIfExists('askrooms');
     }
 }

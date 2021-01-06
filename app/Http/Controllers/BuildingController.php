@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Building;
 use Session;
 
-class CategoriesController extends Controller
+class BuildingController extends Controller
 {
     public function index()
     {
-        $categories = Category::get();
-        return view('categories.index',
-        compact('categories'));
+        $buildings = Building::get();
+        return view('buildings.index',
+        compact('buildings'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('buildings.create');
     }
 
     /**
@@ -33,15 +33,15 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $category=Category::create
+        $building=Building::create
         ($request->validate([
             'name'=>'required'
         ]));
             
-            $category->save();
+            $building->save();
     
-            Session::flash('success','You have successfully created a category.');
-            return redirect()->route('categories.index');
+            Session::flash('success','You have successfully created a building.');
+            return redirect()->route('buildings.index');
     }
 
     /**
@@ -50,9 +50,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Building $building)
     {
-        return view('news',['category'=>$category]);
+        return view('news',compact('building'));
     }
 
     /**
@@ -63,9 +63,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
+        $building = Building::find($id);
 
-        return view('categories.edit',compact('category'));
+        return view('buildings.edit',
+        compact('building'));
     }
 
     /**
@@ -77,12 +78,12 @@ class CategoriesController extends Controller
      */
     public function update($id)
     {
-        $category = Category::find($id);
-        $category->name = request()->name;
-        $category->update();
+        $building = Building::find($id);
+        $building->name = request()->name;
+        $building->update();
 
-        Session::flash('success','You have successfully updated a category.');
-        return redirect()->route('categories.index');
+        Session::flash('success','You have successfully updated a building.');
+        return redirect()->route('buildings.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -92,15 +93,15 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category=Category::find($id);
+        $building=Building::find($id);
           
-        foreach($category->posts as $post){
-            $post->forceDelete();
+        foreach($building->allocations as $allocation){
+            $allocation->forceDelete();
         }
         
-        $category->delete();
+        $building->delete();
          
-        Session::flash('success','You have successfully deleted a category.');
-        return redirect()->route('categories.index');
+        Session::flash('success','You have successfully deleted a building.');
+        return redirect()->route('buildings.index');
     }
 }

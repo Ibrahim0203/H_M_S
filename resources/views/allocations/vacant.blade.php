@@ -4,13 +4,13 @@
   
 <div class="card card-default">
 <div class="card-header">
-     Published Allocation
+     Vacant Rooms
 </div>
      <div class="card-body">
         <table class="table table-hover">
              <thead>
                  <th>
-                     Room 
+                     Room No
                  </th>
                  <th>
                      Building
@@ -19,54 +19,40 @@
                      Floor
                  </th>
                  <th>
-                     Student's Name
+                     Allocate
                  </th>
                  <th>
-                     Student's Id
-                 </th>
-                 <th>
-                     Edit
-                 </th>
-                 <th>
-                     Vacant
+                     Delete
                  </th>
              </thead>
 
              <tbody>
-               @if($allocations->count()>0)
-               @foreach($allocations as $allocation)
+                 @if($allocations->count()>0)
+                    
+                 @foreach($allocations as $allocation)
                    <tr>
                       <td>
                          {{$allocation->room_no}}
                       </td>
-                      
                       <td>
                          {{$allocation->building->name}}
                       </td>
-                      
                       <td>
-                      
                          {{$allocation->floor->floor}}
                       </td>
-                      
                       <td>
-                         {{$allocation->student_name}}
+                         <a href="{{route('allocations.allocate',[$allocation->id])}}" class="btn btn-xs btn-success">Allocate</a>
                       </td>
                       <td>
-                         {{$allocation->student_id}}
-                      </td>
-                      <td>
-                         <a href="{{route('allocations.edit',[$allocation->id])}}" class="btn btn-xs btn-info">Edit</a>
-                      </td>
-                      <td>
-                         <a href="{{route('allocations.vacant',[$allocation->id])}}" class="btn btn-xs btn-danger">Vacant</a>
+                         <a href="{{route('allocations.kill',[$allocation->id])}}" class="btn btn-xs btn-danger">Delete</a>
                       </td>
                    </tr>
                  @endforeach
+
                  @else
-                 <tr>
+                      <tr>
                          <th colspan="5" class="text-center">
-                             No Allocations Yet.
+                             No Vacant Room.
                          </th>
                       </tr>
 

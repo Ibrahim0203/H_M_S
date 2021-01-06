@@ -1,3 +1,4 @@
+@include('includes.errors') 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
@@ -19,8 +20,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/select2.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-    @yield('styles')
   </head>
 
   <body>
@@ -69,6 +68,7 @@
                 <a href="#">+01 234 567 890</a>
               </li>
             </ul>
+
             <form method="POST" action="{{ route('logout') }}">
                             @csrf
                   <a class="st-btn st-style1 st-size-medium st-color1" href="{{ route('logout') }}"
@@ -110,10 +110,11 @@
                     </a>
                     
                   </li>
-                  <li><a href="{{route('home')}}">Blogs</a></li>
+                  <li><a href="{{route('blog')}}">Blogs</a></li>
                   <li><a href="{{route('home')}}">Notice</a></li>
-                  <li><a href="{{route('apply')}}">Apply for Room</a></li>
-                  <li><a href="{{route('home')}}">Payment</a></li>
+                  <li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
+                  <li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
+                  <li><a href="{{route('apply')}}">Opinion</a></li>
                   
                 </ul>
               </div>
@@ -126,82 +127,148 @@
     <div class="st-content">
       <div
         class="st-page-heading st-size-md st-style1 st-dynamic-bg"
-        data-src="assets/img/bg/bg-img11.jpg"
+        data-src="assets/img/bg/bg-img3.jpg"
       >
         <div class="container">
           <div class="st-page-heading-in text-center">
-            <h1 class="st-page-heading-title">Personal Blogs</h1>
+            <h1 class="st-page-heading-title">Apply for Room Here</h1>
             <div class="st-page-heading-subtitle">
-              Read,Enjoy & create a good bonding.
+              
             </div>
           </div>
         </div>
       </div>
       <!-- .st-page-heading -->
-      <div class="st-height-b100 st-height-lg-b80"></div>
-      <div class="container">
-        <div class="row">
-       
-          <div class="col-lg-8">
-            <div class="row">
-            @foreach($posts as $post)
-              <div class="col-lg-6">
-                <div class="st-post st-style3 st-zoom">
-                  <a href="{{ route('posts.single',['slug'=>$post->slug]) }}" class="st-post-thumb">
-                    <img
-                      class="st-zoom-in"
-                      src="{{$post->featured}}"
-                      alt="news1"
+      <!-- Start Contact Section -->
+      <section class="st-shape-wrap" id="contact">
+        <div class="st-shape2">
+          <img src="assets/img/shape/bg-shape2.png" alt="shape2" />
+        </div>
+        <div class="st-height-b120 st-height-lg-b80"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+            
+              <!-- form validation error message -->
+              <div id="st-alert"></div>
+              @if(Session::has('message_sent'))
+                <div class="alert alert-success" role="alert">
+                  {{Session::get('message_sent')}}
+                </div>
+              @endif
+              <form
+                action="{{ route('askrooms.store') }}"
+                class="row st-contact-form st-type1"
+                method="post"
+                enctype="multipart/form-data"
+              >
+              @csrf
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="John Doe"
+                      required
                     />
-                  </a>
-                  <div class="st-post-info">
-                    <h2 class="st-post-title">
-                      <a href="{{ route('posts.single',['slug'=>$post->slug]) }}"
-                        >{{$post->title}}</a
-                      >
-                    </h2>
-                    <div class="st-post-meta">
-                      <span>            
-                        <time datetime="2016-03-20 12:00:00">
-                               {{ $post->created_at->toFormattedDateString() }}
-                         </time>
-                      </span>
-                    </div>
-
-                  </div>
-                  <div class="st-post-footer">
-                    <a
-                      href="{{ route('posts.single',['slug'=>$post->slug]) }}"
-                      class="st-btn st-style2 st-color1 st-size-medium"
-                      >Read More</a
-                    >
                   </div>
                 </div>
-                <div class="st-height-b30 st-height-lg-b30"></div>
-              </div>
-              @endforeach
+                
+                 <!-- .col -->
+                 <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Student Id</label>
+                    <input
+                      type="text"
+                      id="student_id"
+                      name="student_id"
+                      placeholder="111-22-3333"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- .col -->
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Program</label>
+                    <input
+                      type="text"
+                      id="program"
+                      name="program"
+                      placeholder="B.Sc in CSE / M.Sc in CSE"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- .col -->
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Semester</label>
+                    <input
+                      type="text"
+                      id="semester"
+                      name="semester"
+                      placeholder="First/Second/Third..."
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- .col -->
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Section</label>
+                    <input
+                      type="text"
+                      id="section"
+                      name="section"
+                      placeholder="Mars / Jupiter...."
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- .col -->
+                <div class="col-lg-6">
+                  <div class="st-form-field st-style1">
+                    <label>Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="john@gmail.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- .col -->
+                <div class="col-lg-12">
+                  <div class="text-center">
+                    <div class="st-height-b10 st-height-lg-b10"></div>
+                    <button
+                      class="st-btn st-style1 st-color1 st-size-medium"
+                      method="post"
+                    >
+                      Apply 
+                    </button>
+                  </div>
+                </div>
+                <!-- .col -->
+              </form>
             </div>
-          </div>
-        
-          <div class="col-lg-4">
-            <div class="st-height-b0 st-height-lg-b40"></div>
-            <div class="st-widget st-sidebar-widget">
-              <h3 class="st-widget-title">Categories</h3>
-             
-              <ul class="st-widget-list">
-              @foreach($categories as $category)
-                <li><a href="{{ route('category.single',['id'=>$category->id]) }}">{{$category->name}}</a></li>
-                @endforeach
-              </ul>
-              
-            </div>
-            <div class="st-height-b30 st-height-lg-b30"></div>
-
+            <!-- .col -->
           </div>
         </div>
-      </div>
-      <div class="st-height-b100 st-height-lg-b80"></div>
+        <div class="st-height-b120 st-height-lg-b80"></div>
+      </section>
+      <!-- End Contact Section -->
 
+      <div class="st-google-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10329.06404751168!2d90.37222517130952!3d23.75181458027787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1606339379882!5m2!1sen!2sbd"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
     <!-- Start Footer -->
     <footer class="st-site-footer st-sticky-footer">
@@ -369,17 +436,5 @@
     <script src="{{asset('assets/js/wow.min.js')}}"></script>
     <script src="{{asset('assets/js/select2.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script src="{{ asset('js/toastr.min.js') }}" ></script>
-    <script>
-       @if(Session::has('success'))
-            toastr.success("{{Session::get('success')}}")
-       @endif
-
-       @if(Session::has('info'))
-            toastr.info("{{Session::get('info')}}")
-       @endif
-
-    </script>
-        @yield('scripts')
   </body>
 </html>

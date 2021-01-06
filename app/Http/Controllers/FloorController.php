@@ -3,21 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Floor;
 use Session;
-use App\Models\Room;
 
-class RoomController extends Controller
+class FloorController extends Controller
 {
     public function index()
     {
-        $rooms = Room::get();
-        return view('admin.room.index',['rooms'=>$rooms]);
-
-    }
-
-    public function show($id)
-    {
-        //
+        $floors = Floor::get();
+        return view('floors.index',
+        compact('floors'));
     }
 
     /**
@@ -27,7 +22,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('admin.rooms.create');
+        return view('floors.create');
     }
 
     /**
@@ -36,15 +31,18 @@ class RoomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-       $room=Room::create($request->validate([
-            'room_no'=>'required'
-        ]));
-        $room->save();
+        $this->validate($request,[
+            'floor'=>'required'
+        ]);
 
-        Session::flash('success','You have successfully added a room');
-        return redirect()->route('rooms.index');
+        Floor::create([
+             'floor'=>$request->floor
+        ]);
+
+        Session::flash('success','Floor created successfully.');
+        return redirect()->route('floors.create');
     }
 
     /**
@@ -53,7 +51,10 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -63,9 +64,9 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        $room = Room::find($id);
+        $floor=Floor::find($id);
 
-        return view('admin.rooms.edit',compact('room'));
+        return view('floors.edit',compact('floor'));
     }
 
     /**
@@ -77,12 +78,12 @@ class RoomController extends Controller
      */
     public function update($id)
     {
-        $room = Room::find($id);
-        $room->room_no = request()->room_no;
-        $room->update();
+        $floor = Floor::find($id);
+        $floor->floor = request()->floor;
+        $floor->update();
 
-        Session::flash('success','You have successfully updated a room.');
-        return redirect()->route('rooms.index');
+        Session::flash('success','You have successfully updated a floor.');
+        return redirect()->route('floors.index');
     }
 
     /**
@@ -93,11 +94,8 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        $room=Room::find($id);
-        
-        $room->delete();
-         
-        Session::flash('success','You have successfully deleted a room.');
-        return redirect()->route('rooms.index');
+        Floor::destroy($id);
+        Session::flash('success','Floor deleted successfully.');
+        return redirect()->route('floors.index');
     }
 }

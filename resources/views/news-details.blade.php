@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="" />
     <!-- Page Title -->
-    <title>HOSTEL MANAGEMENT SYSTEM</title>
+    <title>Ngo Bangladesh - News Details</title>
     <!-- Favicon Icon -->
     <link rel="icon" href="{{asset('assets/img/logo/ngobd-favicon.png')}}" />
     <!-- Stylesheets -->
@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/select2.min.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-    @yield('styles')
   </head>
 
   <body>
@@ -31,7 +29,7 @@
           <div class="st-top-header-in">
             <ul class="st-top-header-list">
               <li>
-                <span>Last update: 10 January, 2021</span>
+                <span>Last update: 25 November, 2020</span>
               </li>
               <li>
                 <svg
@@ -43,7 +41,7 @@
                     d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
                   />
                 </svg>
-                <a href="#">info@hmsbd.com</a>
+                <a href="#">info@ngobd.com</a>
               </li>
               <li>
                 <svg
@@ -69,11 +67,9 @@
                 <a href="#">+01 234 567 890</a>
               </li>
             </ul>
-            <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                  <a class="st-btn st-style1 st-size-medium st-color1" href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                  this.closest('form').submit();">Log Out</a></form>
+            <a href="#" class="st-btn st-style1 st-size-medium st-color1"
+              >Contact Us</a
+            >
           </div>
         </div>
       </div>
@@ -81,41 +77,41 @@
         <div class="container">
           <div class="st-main-header-in">
             <div class="st-main-header-left">
-              <a class="st-site-branding" href="index.html">
-              HO_ME_SY
-              </a>
+              <a class="st-site-branding" href="index.html"
+                ><img src="{{asset('assets/img/logo/ngobd-logo.png')}}" alt="NgoBD"
+              /></a>
             </div>
             <div class="st-main-header-right">
               <div class="st-nav">
                 <ul class="st-nav-list">
-                  <li><a href="{{route('admin')}}">Admin</a></li>
+                <li><a href="{{route('admin')}}">Admin</a></li>
 
-                  <li class="menu-item-has-children">
-                    <a href="{{route('home')}}"
-                      >Home
-                      
-                    </a>
-                  </li>
-                  <li class="menu-item-has-children">
-                    <a href="#"
-                      >About
-                      
-                    </a>
-                  </li>
-                  <li><a href="{{route('home')}}">Hostel Members</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="{{route('posts.create')}}"
-                      >Create Blog
-                     
-                    </a>
-                    
-                  </li>
-                  <li><a href="{{route('home')}}">Blogs</a></li>
-                  <li><a href="{{route('home')}}">Notice</a></li>
-                  <li><a href="{{route('apply')}}">Apply for Room</a></li>
-                  <li><a href="{{route('home')}}">Payment</a></li>
-                  
-                </ul>
+<li class="menu-item-has-children">
+  <a href="{{route('home')}}"
+    >Home
+    
+  </a>
+</li>
+<li class="menu-item-has-children">
+  <a href="#"
+    >About
+    
+  </a>
+</li>
+<li><a href="{{route('home')}}">Hostel Members</a></li>
+<li class="menu-item-has-children">
+  <a href="{{route('posts.create')}}"
+    >Create Blog
+   
+  </a>
+  
+</li>
+<li><a href="{{route('blog')}}">Blogs</a></li>
+<li><a href="{{route('home')}}">Notice</a></li>
+<li><a href="{{route('apply')}}">Apply for Room</a></li>
+<li><a href="{{route('home')}}">Payment</a></li>
+
+</ul>
               </div>
             </div>
           </div>
@@ -123,16 +119,21 @@
       </div>
     </header>
     <!-- End Header Section -->
+
     <div class="st-content">
       <div
         class="st-page-heading st-size-md st-style1 st-dynamic-bg"
-        data-src="assets/img/bg/bg-img11.jpg"
+        data-src="{{asset('assets/img/bg/bg-img12.jpg')}}"
       >
         <div class="container">
           <div class="st-page-heading-in text-center">
-            <h1 class="st-page-heading-title">Personal Blogs</h1>
-            <div class="st-page-heading-subtitle">
-              Read,Enjoy & create a good bonding.
+            <h1 class="st-page-heading-title">News Details</h1>
+            <div class="st-post-label">
+              <span>
+              <time datetime="2016-03-20 12:00:00">
+                  
+              </time>
+              </span>
             </div>
           </div>
         </div>
@@ -141,59 +142,66 @@
       <div class="st-height-b100 st-height-lg-b80"></div>
       <div class="container">
         <div class="row">
-       
           <div class="col-lg-8">
-            <div class="row">
-            @foreach($posts as $post)
-              <div class="col-lg-6">
-                <div class="st-post st-style3 st-zoom">
-                  <a href="{{ route('posts.single',['slug'=>$post->slug]) }}" class="st-post-thumb">
-                    <img
-                      class="st-zoom-in"
-                      src="{{$post->featured}}"
-                      alt="news1"
-                    />
-                  </a>
-                  <div class="st-post-info">
-                    <h2 class="st-post-title">
-                      <a href="{{ route('posts.single',['slug'=>$post->slug]) }}"
-                        >{{$post->title}}</a
-                      >
-                    </h2>
-                    <div class="st-post-meta">
-                      <span>            
-                        <time datetime="2016-03-20 12:00:00">
-                               {{ $post->created_at->toFormattedDateString() }}
-                         </time>
-                      </span>
-                    </div>
+            <div class="st-post-details st-style1">
+              <h2>Increase their self esteem.</h2>
+              <div class="st-post-info">
+                <div class="st-post-text">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Alias enim suscipit, laudantium odit non nihil possimus.
+                    Placeat aliquid, magnam voluptate hic ducimus blanditiis a
+                    tenetur laborum labore, est numquam sunt. Non nihil
+                    possimus. Placeat aliquid, magnam voluptate hic ducimus
+                    blanditiis a tenetur laborum labore, est numquam sunt.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Alias enim suscipit, laudantium odit non nihil possimus.
+                    Placeat aliquid, magnam voluptate hic ducimus blanditiis a
+                    tenetur laborum labore, est numquam sunt.
+                  </p>
+                  <h2>
+                    Setup an affordable buisess to make their life easier.
+                  </h2>
+                  <p>
+                    Proactively envisioned multimedia based expertise and
+                    cross-media growth strategies. Seamlessly visualize quality
+                    intellectual capital without superior collaboration and
+                    idea-sharing. Holistically pontificate installed base
+                    portals after maintainable products.
+                  </p>
+                  <img
+                    
+                    src="#"
+                    alt="news1"
+                  />
 
-                  </div>
-                  <div class="st-post-footer">
-                    <a
-                      href="{{ route('posts.single',['slug'=>$post->slug]) }}"
-                      class="st-btn st-style2 st-color1 st-size-medium"
-                      >Read More</a
-                    >
-                  </div>
+                  <div class="st-height-b20 st-height-lg-b20"></div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit aliquid nostrum aut iusto quidem ipsum dolorum magnam
+                    sed! Ex dolore maiores perspiciatis sunt, pariatur
+                    necessitatibus explicabo illo dignissimos odio veniam libero
+                    ea porro, quia cumque?
+                  </p>
+
+                  
                 </div>
-                <div class="st-height-b30 st-height-lg-b30"></div>
+                <div class="st-height-b60 st-height-lg-b60"></div>
               </div>
-              @endforeach
+
             </div>
           </div>
-        
           <div class="col-lg-4">
             <div class="st-height-b0 st-height-lg-b40"></div>
             <div class="st-widget st-sidebar-widget">
               <h3 class="st-widget-title">Categories</h3>
-             
               <ul class="st-widget-list">
               @foreach($categories as $category)
                 <li><a href="{{ route('category.single',['id'=>$category->id]) }}">{{$category->name}}</a></li>
                 @endforeach
               </ul>
-              
             </div>
             <div class="st-height-b30 st-height-lg-b30"></div>
 
@@ -201,7 +209,6 @@
         </div>
       </div>
       <div class="st-height-b100 st-height-lg-b80"></div>
-
     </div>
     <!-- Start Footer -->
     <footer class="st-site-footer st-sticky-footer">
@@ -211,26 +218,29 @@
             <div class="col-lg-3">
               <div class="st-footer-widget">
                 <div class="st-text-field">
-                   HOSTEL MANAGEMENT SYSTEM
-
+                  <img
+                    src="{{asset('assets/img/logo/ngobd-logo.png')}}"
+                    alt="NgoBD"
+                    class="st-footer-logo"
+                  />
                   <div class="st-height-b25 st-height-lg-b25"></div>
                   <div class="st-footer-text">
-                    We are trying to feel this place like home,
+                    We are Charity, Our Mission to protect people & the planet,
                     Our activities are taken around the world.
                   </div>
                   <div class="st-height-b25 st-height-lg-b25"></div>
                   <ul class="st-social-btn st-style1 st-mp0">
                     <li>
-                      <a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                      <a href="#"><i class="fab fa-facebook-square"></i></a>
                     </li>
                     <li>
-                      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
                     </li>
                     <li>
-                      <a href="https://twitter.com"><i class="fab fa-twitter-square"></i></a>
+                      <a href="#"><i class="fab fa-twitter-square"></i></a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com"><i class="fab fa-youtube-square"></i></a>
+                      <a href="#"><i class="fab fa-youtube-square"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -249,7 +259,7 @@
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i>Payment Methods</a
+                      ><i class="fas fa-chevron-right"></i>Donate Now</a
                     >
                   </li>
                   <li>
@@ -274,26 +284,26 @@
                 <h2 class="st-footer-widget-title">Services</h2>
                 <ul class="st-footer-widget-nav st-mp0">
                   <li>
-                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Donate</a>
                   </li>
                   <li>
                     <a href="#"><i class="fas fa-chevron-right"></i>Sponsor</a>
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i></a
+                      ><i class="fas fa-chevron-right"></i>Fundraise</a
                     >
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i></a
+                      ><i class="fas fa-chevron-right"></i>Volunteer</a
                     >
                   </li>
                   <li>
                     <a href="#"><i class="fas fa-chevron-right"></i>Partner</a>
                   </li>
                   <li>
-                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Jobs</a>
                   </li>
                 </ul>
               </div>
@@ -309,7 +319,7 @@
                   </li>
                   <li>
                     <span class="st-footer-contact-title">Email:</span>
-                    info@hmsbd.com
+                    info@ngobd.com
                   </li>
                   <li>
                     <span class="st-footer-contact-title">Phone:</span> (+01) -
@@ -369,17 +379,5 @@
     <script src="{{asset('assets/js/wow.min.js')}}"></script>
     <script src="{{asset('assets/js/select2.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script src="{{ asset('js/toastr.min.js') }}" ></script>
-    <script>
-       @if(Session::has('success'))
-            toastr.success("{{Session::get('success')}}")
-       @endif
-
-       @if(Session::has('info'))
-            toastr.info("{{Session::get('info')}}")
-       @endif
-
-    </script>
-        @yield('scripts')
   </body>
 </html>

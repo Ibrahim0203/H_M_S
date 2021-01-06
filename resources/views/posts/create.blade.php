@@ -110,10 +110,12 @@
                     </a>
                     
                   </li>
-                  <li><a href="{{route('home')}}">Blogs</a></li>
+                  <li><a href="{{route('blog')}}">Blogs</a></li>
                   <li><a href="{{route('home')}}">Notice</a></li>
-                  <li><a href="{{route('apply')}}">Apply for Room</a></li>
-                  <li><a href="{{route('home')}}">Payment</a></li>
+                  <li><a href="{{route('askroom')}}">Ask Room</a></li>
+                  <li><a href="{{route('leaveroom')}}">Leave Room</a></li>
+                  <li><a href="{{route('apply')}}">Opinion</a></li>
+                  
                 </ul>
               </div>
             </div>
@@ -183,7 +185,7 @@
                       name="category_id"
                       placeholder="Select a Category"
                       required
-                    />
+                    >
 
 
            @foreach($categories as $category)
