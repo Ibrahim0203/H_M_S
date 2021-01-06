@@ -21,6 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+Route::get('/about', function () {return view('about');})->name('about');
+Route::get('/members', function () {return view('members');})->name('members');
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 Route::get('/apply',[App\Http\Controllers\BlogsController::class, 'apply'])->name('apply');
@@ -74,9 +76,6 @@ Route::get('/allocations/vacantindex',[App\Http\Controllers\AllocationController
 Route::get('/allocations/kill/{id}',[App\Http\Controllers\AllocationController::class, 'kill'])->name('allocations.kill');
 Route::get('/allocations/{allocation}',[App\Http\Controllers\AllocationController::class, 'allocate'])->name('allocations.allocate');
 
-Route::get('/blogs/{slug}',[App\Http\Controllers\BlogsController::class, 'singlePost'])->name('posts.single');
-Route::get('/category/{id}',[App\Http\Controllers\BlogsController::class, 'category'])->name('category.single');
-
 Route::get('/askrooms',[App\Http\Controllers\AskroomController::class, 'index'])->name('askrooms.index');
 Route::get('/askrooms/create',[App\Http\Controllers\AskroomController::class, 'create'])->name('askrooms.create');
 Route::post('/askrooms/store',[App\Http\Controllers\AskroomController::class, 'store'])->name('askrooms.store');
@@ -86,4 +85,16 @@ Route::get('/leaverooms',[App\Http\Controllers\LeaveroomController::class, 'inde
 Route::get('/leaverooms/create',[App\Http\Controllers\LeaveroomController::class, 'create'])->name('leaverooms.create');
 Route::post('/leaverooms/store',[App\Http\Controllers\LeaveroomController::class, 'store'])->name('leaverooms.store');
 Route::get('/leaverooms/{leaveroom}',[App\Http\Controllers\LeaveroomController::class, 'destroy'])->name('leaverooms.delete');
+
+Route::get('/notices',[App\Http\Controllers\NoticeController::class, 'index'])->name('notices.index');
+Route::get('/notices/create',[App\Http\Controllers\NoticeController::class, 'create'])->name('notices.create');
+Route::post('/notices/store',[App\Http\Controllers\NoticeController::class, 'store'])->name('notices.store');
+Route::post('/notices/update/{id}',[App\Http\Controllers\NoticeController::class, 'update'])->name('notices.update');
+Route::post('/notices/{notice}',[App\Http\Controllers\NoticeController::class, 'show'])->name('notices.show');
+Route::get('/notices/{notice}/edit',[App\Http\Controllers\NoticeController::class, 'edit'])->name('notices.edit');
+Route::get('/notices/{notice}',[App\Http\Controllers\NoticeController::class, 'destroy'])->name('notices.delete');
+
+Route::get('/blogs/{slug}',[App\Http\Controllers\BlogsController::class, 'singlePost'])->name('posts.single');
+Route::get('/category/{id}',[App\Http\Controllers\BlogsController::class, 'category'])->name('category.single');
+Route::get('/notices/{slug}',[App\Http\Controllers\NoticeController::class, 'singleNotice'])->name('notices.single');
 });

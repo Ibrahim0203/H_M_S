@@ -67,9 +67,11 @@
                 <a href="#">+01 234 567 890</a>
               </li>
             </ul>
-            <a href="#" class="st-btn st-style1 st-size-medium st-color1"
-              >Contact Us</a
-            >
+            <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                  <a class="st-btn st-style1 st-size-medium st-color1" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                  this.closest('form').submit();">Log Out</a></form>
           </div>
         </div>
       </div>
@@ -92,13 +94,13 @@
     
   </a>
 </li>
-<li class="menu-item-has-children">
-  <a href="#"
+<<li class="menu-item-has-children">
+  <a href="{{route('about')}}"
     >About
     
   </a>
 </li>
-<li><a href="{{route('home')}}">Hostel Members</a></li>
+<li><a href="{{route('members')}}">Hostel Members</a></li>
 <li class="menu-item-has-children">
   <a href="{{route('posts.create')}}"
     >Create Blog
@@ -107,9 +109,10 @@
   
 </li>
 <li><a href="{{route('blog')}}">Blogs</a></li>
-<li><a href="{{route('home')}}">Notice</a></li>
-<li><a href="{{route('apply')}}">Apply for Room</a></li>
-<li><a href="{{route('home')}}">Payment</a></li>
+<li><a href="{{route('notice')}}">Notice</a></li>
+<li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
+<li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
+<li><a href="{{route('apply')}}">Opinion</a></li>
 
 </ul>
               </div>
@@ -129,9 +132,9 @@
           <div class="st-page-heading-in text-center">
             <h1 class="st-page-heading-title">News Details</h1>
             <div class="st-post-label">
-              <span>
+            <span>
               <time datetime="2016-03-20 12:00:00">
-                  
+                  {{ $post->created_at->toFormattedDateString() }}
               </time>
               </span>
             </div>
@@ -144,53 +147,25 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="st-post-details st-style1">
-              <h2>Increase their self esteem.</h2>
+              <h2>{{$post->title}}</h2>
               <div class="st-post-info">
                 <div class="st-post-text">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Alias enim suscipit, laudantium odit non nihil possimus.
-                    Placeat aliquid, magnam voluptate hic ducimus blanditiis a
-                    tenetur laborum labore, est numquam sunt. Non nihil
-                    possimus. Placeat aliquid, magnam voluptate hic ducimus
-                    blanditiis a tenetur laborum labore, est numquam sunt.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Alias enim suscipit, laudantium odit non nihil possimus.
-                    Placeat aliquid, magnam voluptate hic ducimus blanditiis a
-                    tenetur laborum labore, est numquam sunt.
-                  </p>
-                  <h2>
-                    Setup an affordable buisess to make their life easier.
-                  </h2>
-                  <p>
-                    Proactively envisioned multimedia based expertise and
-                    cross-media growth strategies. Seamlessly visualize quality
-                    intellectual capital without superior collaboration and
-                    idea-sharing. Holistically pontificate installed base
-                    portals after maintainable products.
-                  </p>
                   <img
                     
-                    src="#"
+                    src="{{$post->featured}}"
                     alt="news1"
                   />
 
                   <div class="st-height-b20 st-height-lg-b20"></div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit aliquid nostrum aut iusto quidem ipsum dolorum magnam
-                    sed! Ex dolore maiores perspiciatis sunt, pariatur
-                    necessitatibus explicabo illo dignissimos odio veniam libero
-                    ea porro, quia cumque?
+                    {{$post->content}}
                   </p>
 
                   
                 </div>
                 <div class="st-height-b60 st-height-lg-b60"></div>
               </div>
-
+\
             </div>
           </div>
           <div class="col-lg-4">

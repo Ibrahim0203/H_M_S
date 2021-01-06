@@ -68,9 +68,11 @@
                 <a href="#">+01 234 567 890</a>
               </li>
             </ul>
-            <a href="{{route('apply')}}" class="st-btn st-style1 st-size-medium st-color1"
-              >Apply for Room</a
-            >
+            <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                  <a class="st-btn st-style1 st-size-medium st-color1" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                  this.closest('form').submit();">Log Out</a></form>
           </div>
         </div>
       </div>
@@ -94,23 +96,24 @@
                     </a>
                   </li>
                   <li class="menu-item-has-children">
-                    <a href="#"
-                      >About
-                      
-                    </a>
-                  </li>
-                  <li><a href="{{route('home')}}">Hostel Members</a></li>
+  <a href="{{route('about')}}"
+    >About
+    
+  </a>
+</li>
+<li><a href="{{route('members')}}">Hostel Members</a></li>
                   <li class="menu-item-has-children">
-                    <a href="#"
+                    <a href="{{route('posts.create')}}"
                       >Create Blog
                      
                     </a>
                     
                   </li>
-                  <li><a href="{{route('home')}}">Blogs</a></li>
-                  <li><a href="{{route('home')}}">Notice</a></li>
-                  <li><a href="{{route('apply')}}">Apply for Room</a></li>
-                  <li><a href="{{route('home')}}">Payment</a></li>
+                  <li><a href="{{route('blog')}}">Blogs</a></li>
+                  <li><a href="{{route('notice')}}">Notice</a></li>
+                  <li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
+                  <li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
+                  <li><a href="{{route('apply')}}">Opinion</a></li>
                 </ul>
               </div>
             </div>

@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="" />
     <!-- Page Title -->
-    <title>Hostel Management System</title>
+    <title>Ngo Bangladesh - News Details</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" href="{{asset('assets/img/logo/ngobd-favicon.png')}}" />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/slick.css" />
-    <link rel="stylesheet" href="assets/css/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/jQueryUi.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/lightgallery.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/select2.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
   </head>
 
   <body>
@@ -26,7 +29,7 @@
           <div class="st-top-header-in">
             <ul class="st-top-header-list">
               <li>
-                <span>Last update: 10 January, 2021</span>
+                <span>Last update: 25 November, 2020</span>
               </li>
               <li>
                 <svg
@@ -38,7 +41,7 @@
                     d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
                   />
                 </svg>
-                <a href="#">info@hmsbd.com</a>
+                <a href="#">info@ngobd.com</a>
               </li>
               <li>
                 <svg
@@ -76,41 +79,42 @@
         <div class="container">
           <div class="st-main-header-in">
             <div class="st-main-header-left">
-              <a class="st-site-branding" href="index.html">
-              HO_ME_SY
-              </a>
+              <a class="st-site-branding" href="index.html"
+                ><img src="{{asset('assets/img/logo/ngobd-logo.png')}}" alt="NgoBD"
+              /></a>
             </div>
             <div class="st-main-header-right">
               <div class="st-nav">
                 <ul class="st-nav-list">
-                  <li><a href="{{route('admin')}}">Admin</a></li>
+                <li><a href="{{route('admin')}}">Admin</a></li>
 
-                  <li class="menu-item-has-children">
-                    <a href="{{route('home')}}"
-                      >Home
-                      
-                    </a>
-                  </li>
-                  <li class="menu-item-has-children">
+<li class="menu-item-has-children">
+  <a href="{{route('home')}}"
+    >Home
+    
+  </a>
+</li>
+<li class="menu-item-has-children">
   <a href="{{route('about')}}"
     >About
     
   </a>
 </li>
 <li><a href="{{route('members')}}">Hostel Members</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="{{route('posts.create')}}"
-                      >Create Blog
-                     
-                    </a>
-                    
-                  </li>
-                  <li><a href="{{route('blog')}}">Blogs</a></li>
-                  <li><a href="{{route('notice')}}">Notice</a></li>
-                  <li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
-                  <li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
-                  <li><a href="{{route('apply')}}">Opinion</a></li>
-                </ul>
+<li class="menu-item-has-children">
+  <a href="{{route('posts.create')}}"
+    >Create Blog
+   
+  </a>
+  
+</li>
+<li><a href="{{route('blog')}}">Blogs</a></li>
+<li><a href="{{route('notice')}}">Notice</a></li>
+<li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
+<li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
+<li><a href="{{route('apply')}}">Opinion</a></li>
+
+</ul>
               </div>
             </div>
           </div>
@@ -118,10 +122,83 @@
       </div>
     </header>
     <!-- End Header Section -->
+    <!-- End Header Section -->
+    <div class="st-content">
+      <div
+        class="st-page-heading st-size-md st-style1 st-dynamic-bg"
+        data-src="assets/img/bg/bg-img11.jpg"
+      >
+        <div class="container">
+          <div class="st-page-heading-in text-center">
+            <h1 class="st-page-heading-title">Our Latest News</h1>
+            <div class="st-page-heading-subtitle">
+              Check out the latest news and events update.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- .st-page-heading -->
+      <div class="st-height-b100 st-height-lg-b80"></div>
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-lg-8">
+            <div class="row">
+            @foreach($category->posts as $post)
+              <div class="col-lg-6">
+                <div class="st-post st-style3 st-zoom">
+                  <a href="{{ route('posts.single',['slug'=>$post->slug]) }}" class="st-post-thumb">
+                    <img
+                      class="st-zoom-in"
+                      src="{{$post->featured}}"
+                      alt="news1"
+                    />
+                  </a>
+                  <div class="st-post-info">
+                    <h2 class="st-post-title">
+                      <a href="{{ route('posts.single',['slug'=>$post->slug]) }}"
+                        >{{$post->title}}</a
+                      >
+                    </h2>
+                    <div class="st-post-meta">
+                      <span class="st-post-date">Aug 21, 2020</span>
+                    </div>
 
-   @yield('content')
+                  </div>
+                  <div class="st-post-footer">
+                    <a
+                      href="{{ route('posts.single',['slug'=>$post->slug]) }}"
+                      class="st-btn st-style2 st-color1 st-size-medium"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+                <div class="st-height-b30 st-height-lg-b30"></div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        
+          <div class="col-lg-4">
+            <div class="st-height-b0 st-height-lg-b40"></div>
+            <div class="st-widget st-sidebar-widget">
+              <h3 class="st-widget-title">Categories</h3>
+             
+              <ul class="st-widget-list">
+              @foreach($categories as $category)
+                <li><a href="{{ route('category.single',['id'=>$category->id]) }}">{{$category->name}}</a></li>
+                @endforeach
+              </ul>
+              
+            </div>
+            <div class="st-height-b30 st-height-lg-b30"></div>
 
-    <!-- Start Footer -->
+          </div>
+        </div>
+      </div>
+      <div class="st-height-b100 st-height-lg-b80"></div>
+    </div>
+
     <footer class="st-site-footer st-sticky-footer">
       <div class="st-main-footer">
         <div class="container">
@@ -129,26 +206,29 @@
             <div class="col-lg-3">
               <div class="st-footer-widget">
                 <div class="st-text-field">
-                   HOSTEL MANAGEMENT SYSTEM
-
+                  <img
+                    src="{{asset('assets/img/logo/ngobd-logo.png')}}"
+                    alt="NgoBD"
+                    class="st-footer-logo"
+                  />
                   <div class="st-height-b25 st-height-lg-b25"></div>
                   <div class="st-footer-text">
-                    We are trying to feel this place like home,
+                    We are Charity, Our Mission to protect people & the planet,
                     Our activities are taken around the world.
                   </div>
                   <div class="st-height-b25 st-height-lg-b25"></div>
                   <ul class="st-social-btn st-style1 st-mp0">
                     <li>
-                      <a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
+                      <a href="#"><i class="fab fa-facebook-square"></i></a>
                     </li>
                     <li>
-                      <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
                     </li>
                     <li>
-                      <a href="https://twitter.com"><i class="fab fa-twitter-square"></i></a>
+                      <a href="#"><i class="fab fa-twitter-square"></i></a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com"><i class="fab fa-youtube-square"></i></a>
+                      <a href="#"><i class="fab fa-youtube-square"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -167,7 +247,7 @@
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i>Payment Methods</a
+                      ><i class="fas fa-chevron-right"></i>Donate Now</a
                     >
                   </li>
                   <li>
@@ -192,26 +272,26 @@
                 <h2 class="st-footer-widget-title">Services</h2>
                 <ul class="st-footer-widget-nav st-mp0">
                   <li>
-                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Donate</a>
                   </li>
                   <li>
                     <a href="#"><i class="fas fa-chevron-right"></i>Sponsor</a>
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i></a
+                      ><i class="fas fa-chevron-right"></i>Fundraise</a
                     >
                   </li>
                   <li>
                     <a href="#"
-                      ><i class="fas fa-chevron-right"></i></a
+                      ><i class="fas fa-chevron-right"></i>Volunteer</a
                     >
                   </li>
                   <li>
                     <a href="#"><i class="fas fa-chevron-right"></i>Partner</a>
                   </li>
                   <li>
-                    <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#"><i class="fas fa-chevron-right"></i>Jobs</a>
                   </li>
                 </ul>
               </div>
@@ -227,7 +307,7 @@
                   </li>
                   <li>
                     <span class="st-footer-contact-title">Email:</span>
-                    info@hmsbd.com
+                    info@ngobd.com
                   </li>
                   <li>
                     <span class="st-footer-contact-title">Phone:</span> (+01) -
@@ -276,14 +356,16 @@
     <!-- End Video Popup -->
 
     <!-- Scripts -->
-    <script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/isotope.pkg.min.js"></script>
-    <script src="assets/js/jquery.slick.min.js"></script>
-    <script src="assets/js/counter.min.js"></script>
-    <script src="assets/js/lightgallery.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/jQueryUi.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <script src="{{asset('assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.pkg.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.slick.min.js')}}"></script>
+    <script src="{{asset('assets/js/mailchimp.min.js')}}"></script>
+    <script src="{{asset('assets/js/counter.min.js')}}"></script>
+    <script src="{{asset('assets/js/lightgallery.min.js')}}"></script>
+    <script src="{{asset('assets/js/ripples.min.js')}}"></script>
+    <script src="{{asset('assets/js/wow.min.js')}}"></script>
+    <script src="{{asset('assets/js/select2.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
   </body>
 </html>

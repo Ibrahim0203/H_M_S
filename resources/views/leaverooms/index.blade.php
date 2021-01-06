@@ -47,7 +47,7 @@
                       {{$leaveroom->student_name}}
                       </td>
                       <td>
-                      {{$leaveroom->student_id}
+                      {{$leaveroom->student_id}}
                       </td>
                       <td>
                          <a href="{{route('leaverooms.delete',[$leaveroom->id])}}" class="btn btn-xs btn-danger">Delete</a>

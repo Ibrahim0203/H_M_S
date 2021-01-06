@@ -97,12 +97,12 @@
                     </a>
                   </li>
                   <li class="menu-item-has-children">
-                    <a href="#"
-                      >About
-                      
-                    </a>
-                  </li>
-                  <li><a href="{{route('home')}}">Hostel Members</a></li>
+  <a href="{{route('about')}}"
+    >About
+    
+  </a>
+</li>
+<li><a href="{{route('members')}}">Hostel Members</a></li>
                   <li class="menu-item-has-children">
                     <a href="{{route('posts.create')}}"
                       >Create Blog
@@ -111,9 +111,9 @@
                     
                   </li>
                   <li><a href="{{route('blog')}}">Blogs</a></li>
-                  <li><a href="{{route('home')}}">Notice</a></li>
-                  <li><a href="{{route('askroom')}}">Ask Room</a></li>
-                  <li><a href="{{route('leaveroom')}}">Leave Room</a></li>
+                  <li><a href="{{route('notice')}}">Notice</a></li>
+                  <li><a href="{{route('askrooms.create')}}">Ask Room</a></li>
+                  <li><a href="{{route('leaverooms.create')}}">Leave Room</a></li>
                   <li><a href="{{route('apply')}}">Opinion</a></li>
                   
                 </ul>
