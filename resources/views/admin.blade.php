@@ -119,6 +119,18 @@
             </a>
             <ul class="nav nav-treeview">
               @if(Auth::check())
+              <li class="nav-item">
+                 <a href="{{route('users.create')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Create User</p>
+                 </a>
+               </li>
+               <li class="nav-item">
+                 <a href="{{route('users.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Users</p>
+                 </a>
+               </li>
 
               <li class="nav-item">
                  <a href="{{route('askrooms.index')}}" class="nav-link active">
@@ -203,6 +215,21 @@
                    <p>Blogs</p>
                  </a>
                </li>
+
+               <li class="nav-item">
+                 <a href="{{route('notices.create')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Create Notice</p>
+                 </a>
+               </li>
+
+               <li class="nav-item">
+                 <a href="{{route('notices.index')}}" class="nav-link active">
+                   <i class="far fa-circle nav-icon"></i>
+                   <p>Notices</p>
+                 </a>
+               </li>
+
 
               @endif
 

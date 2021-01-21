@@ -16,4 +16,8 @@ class Building extends Model
     {
         return $this->hasMany('App\Models\Allocation');
     }
+    public function leaverooms()
+    {
+        return $this->hasMany('App\Models\Leaveroom');
+    }
 }

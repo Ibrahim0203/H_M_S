@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +21,12 @@ Route::get('/', function () {
 
 
 Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
 Route::get('/about', function () {return view('about');})->name('about');
 Route::get('/members', function () {return view('members');})->name('members');
+
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'], function(){
 Route::get('/apply',[App\Http\Controllers\BlogsController::class, 'apply'])->name('apply');
@@ -30,6 +34,10 @@ Route::get('/blog', function () {return view('blog',
           ['posts'=>App\Models\Blog::latest()->get(),
           'categories'=>App\Models\Category::latest()->get()]);})
           ->name('blog');
+Route::get('/notice', function () {return view('notice',
+    ['notices'=>App\Models\Notice::latest()->get()]);})->name('notice');
+
+   
 
 Route::post('/send-message',[App\Http\Controllers\ContactController::class, 'sendEmail'])->name('contact.send');
     
@@ -92,9 +100,18 @@ Route::post('/notices/store',[App\Http\Controllers\NoticeController::class, 'sto
 Route::post('/notices/update/{id}',[App\Http\Controllers\NoticeController::class, 'update'])->name('notices.update');
 Route::post('/notices/{notice}',[App\Http\Controllers\NoticeController::class, 'show'])->name('notices.show');
 Route::get('/notices/{notice}/edit',[App\Http\Controllers\NoticeController::class, 'edit'])->name('notices.edit');
-Route::get('/notices/{notice}',[App\Http\Controllers\NoticeController::class, 'destroy'])->name('notices.delete');
+Route::get('/notices/delete/{id}',[App\Http\Controllers\NoticeController::class, 'destroy'])->name('notices.delete');
 
 Route::get('/blogs/{slug}',[App\Http\Controllers\BlogsController::class, 'singlePost'])->name('posts.single');
 Route::get('/category/{id}',[App\Http\Controllers\BlogsController::class, 'category'])->name('category.single');
 Route::get('/notices/{slug}',[App\Http\Controllers\NoticeController::class, 'singleNotice'])->name('notices.single');
+
+
+Route::get('/users',[App\Http\Controllers\UsersController::class, 'index'])->name('users.index');
+Route::get('/users/create',[App\Http\Controllers\UsersController::class, 'create'])->name('users.create');
+Route::post('/users/store',[App\Http\Controllers\UsersController::class, 'store'])->name('users.store');
+Route::get('/users/admin/{id}',[App\Http\Controllers\UsersController::class, 'admin'])->name('users.admin');
+Route::get('/users/not-admin/{id}',[App\Http\Controllers\UsersController::class, 'not_admin'])->name('users.not.admin');
+Route::get('/users/delete/{id}',[App\Http\Controllers\UsersController::class, 'delete'])->name('users.delete');
+
 });

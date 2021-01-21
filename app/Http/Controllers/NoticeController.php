@@ -58,7 +58,7 @@ class NoticeController extends Controller
      */
     public function show(Notice $notice)
     {
-        return view('welcome',compact("notice"));
+        return view('welcome',compact('notice'));
     }
 
     public function singleNotice($slug){
@@ -118,7 +118,8 @@ class NoticeController extends Controller
      */
     public function destroy($id)
     {
-        Notice::destroy($id);
+        $notice=Notice::find($id);
+        $notice->delete();
         Session::flash('success','Your notice is deleted.');
 
         return redirect()->back();

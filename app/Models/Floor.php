@@ -13,4 +13,9 @@ class Floor extends Model
     {
         return $this->belongsToMany('App\Models\Allocation');
     }
+
+    public function leaverooms()
+    {
+        return $this->hasMany('App\Models\Leaveroom');
+    }
 }

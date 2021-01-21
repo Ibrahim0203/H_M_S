@@ -44,28 +44,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img12.jpg"
+                    src="assets/img/avatar/download_2.jpg"
                     alt="news1"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Increase their self esteem</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mrs.Meera</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 21, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Assistant Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999977</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email:assistmanager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -77,28 +78,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img8.jpg"
+                    src="assets/img/avatar/download.jpg"
                     alt="news2"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Education for every children</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 22, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
                 </div>
@@ -109,28 +111,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -140,28 +143,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download_2.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
                   <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -171,28 +175,30 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download_1.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
                   <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
+                   
                 </div>
                 <div class="st-post-footer">
 
@@ -202,28 +208,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download_2.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -233,28 +240,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -264,28 +272,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 
@@ -295,28 +304,29 @@
             <div class="col-lg-4">
               <div class="st-post st-style3">
                 <a
-                  href="news-details.html"
+                  href="#"
                   class="st-post-thumb st-link-hover-wrap st-zoom"
                 >
                   <img
                     class="st-zoom-in"
-                    src="assets/img/projects/project-img5.jpg"
+                    src="assets/img/avatar/download.jpg"
                     alt="news3"
                   />
                   <span class="st-link-hover"><i class="fas fa-link"></i></span>
                 </a>
                 <div class="st-post-info">
-                  <h2 class="st-post-title">
-                    <a href="news-details.html">Make their life easier</a>
+                <h2 class="st-post-title">
+                    <a href="#">Mr. Shahidullah Kaiser</a>
                   </h2>
-                  <div class="st-post-meta">
-                    <span class="st-post-date">Aug 23, 2020</span>
-                  </div>
-                  <div class="st-post-text">
-                    Lorem Ipsum is simply dummy text of the print ing and
-                    typesetting industry. lorem Ipsum the industry's standard
-                    dummy text.
-                  </div>
+                  <h2 class="st-post-title">
+                    <a href="#">Manager</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Phone: 019999999999</a>
+                  </h2>
+                  <h2 class="st-post-title">
+                    <a href="#">Email: manager@gmail.com</a>
+                  </h2>
                 </div>
                 <div class="st-post-footer">
 

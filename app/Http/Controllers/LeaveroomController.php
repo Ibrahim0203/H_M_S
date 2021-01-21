@@ -48,7 +48,6 @@ class LeaveroomController extends Controller
     {
         
         $this->validate($request, [
-              
             'student_name'=>'required',
             'student_id'=>'required',
             'program'=>'required',
@@ -58,7 +57,7 @@ class LeaveroomController extends Controller
             'floor_id'=>'required'
         ]);
 
-        $allocation= Allocation::create([
+        $leaveroom= Leaveroom::create([
           'student_name'=>$request->student_name,
           'student_id'=>$request->student_id,
           'program'=>$request->program,

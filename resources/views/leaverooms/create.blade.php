@@ -131,7 +131,7 @@
       >
         <div class="container">
           <div class="st-page-heading-in text-center">
-            <h1 class="st-page-heading-title">Apply for Room Here</h1>
+            <h1 class="st-page-heading-title">Apply for LeaveRoom Here</h1>
             <div class="st-page-heading-subtitle">
               
             </div>
@@ -157,7 +157,7 @@
                 </div>
               @endif
               <form
-                action="{{ route('askrooms.store') }}"
+                action="{{route('leaverooms.store')}}"
                 class="row st-contact-form st-type1"
                 method="post"
                 enctype="multipart/form-data"
@@ -168,8 +168,8 @@
                     <label>Student's Name</label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="student_name"
+                      name="student_name"
                       placeholder="John Doe"
                       required
                     />
